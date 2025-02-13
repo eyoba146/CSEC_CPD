@@ -10,4 +10,4 @@ def check_year(limak_bob):
     return count
  
 limak_bob = input()
-print(check_year(limak_bob)
+print(check_year(limak_bob))
