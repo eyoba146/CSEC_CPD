@@ -1,0 +1,18 @@
+def calculate_width(nh,people):
+    n,h = map(int,nh.split())
+    people = list(map(int,people.split(" ")))
+    min_width = 0
+    per = 0
+    for person in range(0,n):
+        if people[person] > h:
+            per = people[person]
+            while per > h:
+                per/=2
+                min_width+=2
+        else:
+            min_width+=1
+    return min_width
+
+nh = input()
+people = input()
+print(calculate_width(nh,people))
