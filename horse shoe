@@ -1,0 +1,14 @@
+def horseshoe(s):
+    unique_count = 0
+    for i in range(4):
+        is_duplicate = False
+        for j in range(i):
+            if s[i] == s[j]:
+                is_duplicate = True
+                break
+        if not is_duplicate:
+            unique_count += 1
+    return 4 - unique_count
+
+s = list(map(int, input().split()))
+print(horseshoe(s))
