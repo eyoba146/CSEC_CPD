@@ -1,0 +1,10 @@
+def calculate_final_position(s,t):
+    current_pos = 1
+    for instruction in t:
+        if s[current_pos - 1] == instruction:
+            current_pos += 1
+    return current_pos
+
+s = input()
+t = input()
+print(calculate_final_position(s,t))
