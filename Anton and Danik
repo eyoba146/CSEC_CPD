@@ -1,0 +1,20 @@
+def who_wins(n,ad):
+    anton = 0
+    danik = 0
+    for i in range(n):
+        if ad[i] == "A":
+            anton+=1
+        elif ad[i] == "D":
+            danik+=1
+    if anton == danik:
+        return "Friendship"
+    elif anton > danik:
+        return "Anton"
+    else:
+        return "Danik"
+    
+n = int(input())
+ad = input()
+print(who_wins(n,ad))
+    
+    
