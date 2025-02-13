@@ -1,0 +1,59 @@
+def process_bird_shooting(n, birds_per_wire, m, shots):
+    i = 0
+    while i < m:
+        xi, yi = shots[i]
+        
+        wire_index = xi - 1
+        bird_position = yi
+        
+        if wire_index > 0:
+            birds_per_wire[wire_index - 1] += bird_position - 1
+        
+        if wire_index < n - 1:
+            birds_per_wire[wire_index + 1] += birds_per_wire[wire_index] - bird_position
+        
+        birds_per_wire[wire_index] = 0
+        
+        i += 1
+    
+    j = 0
+    while j < n:
+        print(birds_per_wire[j])
+        j += 1
+
+n = int(input().strip())
+
+birds_input = input().strip()
+birds_per_wire = []
+num = ""
+i = 0
+while i < len(birds_input):
+    if birds_input[i] == " ":
+        birds_per_wire.append(int(num))
+        num = ""
+    else:
+        num += birds_input[i]
+    i += 1
+birds_per_wire.append(int(num))
+
+m = int(input().strip())
+shots = []
+i = 0
+while i < m:
+    shot_input = input().strip()
+    num1, num2 = "", ""
+    space_seen = False
+    j = 0
+    while j < len(shot_input):
+        if shot_input[j] == " ":
+            space_seen = True
+        else:
+            if not space_seen:
+                num1 += shot_input[j]
+            else:
+                num2 += shot_input[j]
+        j += 1
+    shots.append((int(num1), int(num2)))
+    i += 1
+
+process_bird_shooting(n, birds_per_wire, m, shots)
