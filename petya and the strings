@@ -1,0 +1,15 @@
+def check(str1, str2):
+    str1 = str1.lower()
+    str2 = str2.lower()
+    
+    if str1 > str2:
+        return 1
+    elif str1 == str2:
+        return 0
+    else:
+        return -1
+ 
+str1 = input()
+str2 = input()
+ 
+print(check(str1, str2))
