@@ -1,0 +1,29 @@
+def buy_shovel(line):
+    k_str = ''
+    r_str = ''
+    space_seen = False
+    
+    for c in line:
+        if c == ' ':
+            space_seen = True
+        else:
+            if not space_seen:
+                k_str += c
+            else:
+                r_str += c
+    
+    k = int(k_str)
+    r = int(r_str)
+    
+    x = 1
+    while True:
+        total = k * x
+        mod = total % 10
+        if mod == 0 or mod == r:
+            print(x)
+            break
+        x += 1
+    
+    
+line = input().strip()    
+buy_shovel(line)
