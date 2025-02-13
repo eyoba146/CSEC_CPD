@@ -1,0 +1,15 @@
+def night_musium(s):
+    total = 0
+    prev = 0
+    
+    for c in s:
+        current = ord(c) - ord('a')
+        diff = abs(current - prev)
+        add = min(diff, 26 - diff)
+        total += add
+        prev = current
+    
+    return total
+
+s = input().strip()
+print(night_musium(s))
