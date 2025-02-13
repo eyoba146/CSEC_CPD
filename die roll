@@ -1,0 +1,13 @@
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+y, w = map(int, input().split())
+m = y if y > w else w
+favorable = 6 - m + 1
+g = gcd(favorable, 6)
+numerator = favorable // g
+denominator = 6 // g
+
+print(f"{numerator}/{denominator}")
