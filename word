@@ -1,0 +1,16 @@
+def register_word(word):
+    no_lower = 0
+    no_upper = 0
+    for i in range(len(word)):
+        if(word[i].islower()):
+            no_lower+=1
+        else:
+            no_upper+=1
+    if no_lower >= no_upper:
+        return word.lower()
+    else:
+        return word.upper()
+        
+ 
+inputt = input()
+print(register_word(inputt))
