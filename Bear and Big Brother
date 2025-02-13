@@ -1,0 +1,13 @@
+def check_year(limak_bob):
+    count = 0;
+    limak_bob = limak_bob.split(" ")
+    limak = int(limak_bob[0])
+    bob = int(limak_bob[1])
+    while limak <=bob:
+        limak*=3
+        bob*=2
+        count+=1
+    return count
+ 
+limak_bob = input()
+print(check_year(limak_bob)
