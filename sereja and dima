@@ -1,0 +1,25 @@
+def table(n,cards):    
+    left = 0
+    right = n - 1
+    sereja = 0
+    dima = 0
+    turn = 0
+    while left <= right:
+        if cards[left] > cards[right]:
+            current = cards[left]
+            left += 1
+        else:
+            current = cards[right]
+            right -= 1
+        
+        if turn == 0:
+            sereja += current
+        else:
+            dima += current
+        
+        turn = 1 - turn
+    return str(sereja) +" " + str(dima)
+    
+n = int(input())
+cards = list(map(int, input().split()))
+print(table(n,cards))
