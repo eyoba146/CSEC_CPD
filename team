@@ -1,0 +1,10 @@
+def abbreviate(n):
+    no_of_soln = 0
+    for i in range(n):
+        i,j,k = map(int,input().split(" "))
+        if i+j+k >= 2:
+            no_of_soln+=1
+    return no_of_soln
+ 
+n = int(input())    
+print(abbreviate(n))
