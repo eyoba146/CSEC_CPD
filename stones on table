@@ -1,0 +1,20 @@
+def stones_on_table(n,s):    
+    if n == 0:
+        return 0
+    else:
+        total = 0
+        current_char = s[0]
+        current_length = 1
+        for i in range(1, n):
+            if s[i] == current_char:
+                current_length += 1
+            else:
+                total += current_length - 1
+                current_char = s[i]
+                current_length = 1
+        total += current_length - 1
+        return total
+
+n = int(input())
+s = input().strip()
+print(stones_on_table(n,s))
