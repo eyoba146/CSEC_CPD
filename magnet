@@ -1,0 +1,15 @@
+def magnet(n):
+    if n == 0:
+        return 0
+    else:
+        count = 1
+        prev = input().strip()
+        for _ in range(n - 1):
+            current = input().strip()
+            if current != prev:
+                count += 1
+                prev = current
+        return count
+
+n = int(input())
+print(magnet(n))
